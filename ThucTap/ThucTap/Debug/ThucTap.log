@@ -1,3 +1,2 @@
 ﻿  ThucTap.cpp
-  ThucTap.vcxproj -> C:\Users\Microsoft Windows\documents\visual studio 2015\Projects\ThucTap\Debug\ThucTap.exe
-  ThucTap.vcxproj -> C:\Users\Microsoft Windows\documents\visual studio 2015\Projects\ThucTap\Debug\ThucTap.pdb (Full PDB)
+LINK : fatal error LNK1168: cannot open C:\Users\Microsoft Windows\documents\visual studio 2015\Projects\ThucTap\Debug\ThucTap.exe for writing

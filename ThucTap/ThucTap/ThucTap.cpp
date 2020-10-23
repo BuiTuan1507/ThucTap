@@ -256,59 +256,71 @@ Car::~Car()
 
 int main()
 {
-	DynamicObject car1 = Car(1, "Xe Mercedes", 3, 0);
-	DynamicObject car2 = Car(2, "Xe Yamaha", 4, 0);
-	DynamicObject car3 = Car(3, "Xe heo1234", 1, 0);
-	DynamicObject listCar[3] = { car1,car2,car3 };
+	DynamicObject *car1 = new Car(1, "Xe Mercedes", 3, 0);
+	DynamicObject *car2 = new Car(2, "Xe Yamaha", 4, 0);
+	DynamicObject *car3 = new Car(3, "Xe heo99999", 1, 0);
+	DynamicObject *listCar[3] = { car1,car2,car3 };
 
-	DynamicObject moto1 = Motorbike(1, "Xe lead", 3, 0);
-	DynamicObject moto2 = Motorbike(2, "Xe dream", 2, 0);
-	DynamicObject moto3 = Motorbike(3, "Xe SH", 2, 0);
-	DynamicObject listMoto[3] = { moto1,moto2,moto3 };
+	DynamicObject *moto1 = new Motorbike(1, "Xe lead", 3, 0);
+	DynamicObject *moto2 = new Motorbike(2, "Xe dream", 2, 0);
+	DynamicObject *moto3 = new Motorbike(3, "Xe SH", 2, 0);
+	DynamicObject *listMoto[3] = { moto1,moto2,moto3 };
 
-	StaticObject tree1 = Tree(1, "Cam", 8, 0);
-	StaticObject tree2 = Tree(2, "Oi", 7, 0);
-	StaticObject tree3 = Tree(3, "Nho", 5, 0);
-	StaticObject listTree[3] = { tree1,tree2,tree3 };
+	StaticObject *tree1 = new Tree(1, "Cam", 8, 0);
+	StaticObject *tree2 = new Tree(2, "Oi", 7, 0);
+	StaticObject *tree3 = new Tree(3, "Nho", 5, 0);
+	StaticObject *listTree[3] = { tree1,tree2,tree3 };
 
-	StaticObject house1 = House(1, "Market", 5, 0);
-	StaticObject house2 = House(2, "Pizza", 4, 0);
-	StaticObject house3 = House(3, "KFC", 3, 0);
-	StaticObject listHouse[3] = { house1,house2,house3 };
-
+	StaticObject *house1 = new House(1, "Market", 5, 0);
+	StaticObject *house2 = new House(2, "Pizza", 4, 0);
+	StaticObject *house3 = new House(3, "KFC", 3, 0);
+	StaticObject *listHouse[3] = { house1,house2,house3 };
+	printf("Car: \n");
 	for (auto obj : listCar) {
-		obj.getId(obj);
-		obj.getName(obj);
-		obj.printPosition(obj);
-		obj.move(obj);
-		obj.printAfterMovePosition(obj);
+		obj->getId(*obj);
+		obj->getName(*obj);
+		obj->printPosition(*obj);
+		obj->move(*obj);
+		obj->printAfterMovePosition(*obj);
 
 	}
+	printf("Motobike: \n");
 	for (auto obj : listMoto) {
-		obj.getId(obj);
-		obj.getName(obj);
-		obj.printPosition(obj);
-		obj.move(obj);
-		obj.printAfterMovePosition(obj);
+		obj->getId(*obj);
+		obj->getName(*obj);
+		obj->printPosition(*obj);
+		obj->move(*obj);
+		obj->printAfterMovePosition(*obj);
 
 	}
+	printf("Tree: \n");
 	for (auto obj : listTree) {
-		obj.getId(obj);
-		obj.getName(obj);
-		obj.printPosition(obj);
-		obj.move(obj);
-		obj.printAfterMovePosition(obj);
+		obj->getId(*obj);
+		obj->getName(*obj);
+		obj->printPosition(*obj);
+		obj->move(*obj);
+		obj->printAfterMovePosition(*obj);
 
 	}
+	printf("House : \n");
 	for (auto obj : listHouse) {
-		obj.getId(obj);
-		obj.getName(obj);
-		obj.printPosition(obj);
-		obj.move(obj);
-		obj.printAfterMovePosition(obj);
+		obj->getId(*obj);
+		obj->getName(*obj);
+		obj->printPosition(*obj);
+		obj->move(*obj);
+		obj->printAfterMovePosition(*obj);
 
 	}
-
+	for (int i = 0; i < 3; i++) {
+		delete listCar[i];
+		delete listHouse[i];
+		delete listMoto[i];
+		delete listTree[i];
+	}
+	delete[] listCar;
+	delete[] listHouse;
+	delete[] listMoto;
+	delete[] listTree;
 
 
 
